@@ -49,4 +49,4 @@ app.get('/default', function (req, res)
     res.render('default.html');
 });
 
-app.listen(3003);
+app.listen(process.env.PORT || 3000);
