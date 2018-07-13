@@ -5,7 +5,7 @@
   var listening = true;
 
   /**
-   * Will render an audio buffer as wave form. Right now, it expects 
+   * Will render an audio buffer as wave form. Right now, it expects
    * a canvas element to be on the page with class name "visualizer".
    */
   window.Waveform = function() {
@@ -25,7 +25,7 @@
     };
 
     /**
-     * Clears the canvas and draws the dataArray. 
+     * Clears the canvas and draws the dataArray.
      * @param {Uint8Array} dataArray - The time domain audio data to visualize.
      * @param {number} bufferLength - The FFT length.
      */
@@ -36,7 +36,7 @@
       canvasCtx.clearRect(0, 0, WIDTH, HEIGHT);
 
       /**
-       * Will be called at about 60 times per second. If listening, draw the dataArray. 
+       * Will be called at about 60 times per second. If listening, draw the dataArray.
        */
       function draw() {
         if (!listening) {
@@ -67,7 +67,7 @@
         canvasCtx.stroke();
       }
 
-      // Register our draw function with requestAnimationFrame. 
+      // Register our draw function with requestAnimationFrame.
       if (typeof animationId === 'undefined') {
         animationId = requestAnimationFrame(draw);
       }
