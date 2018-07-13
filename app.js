@@ -2,6 +2,26 @@ var bodyParser = require('body-parser');
 var express = require('express');
 var app = express();
 
+var cors = require('cors')
+
+app.use(cors())
+
+app.all('*', function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    if ('OPTIONS' == req.method) {
+        res.sendStatus(200);
+    } else {
+        next();
+    }
+});
+app.use(function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', req.headers.origin);
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+});
+
 app.use(express.static(__dirname + '/'));
 app.use(bodyParser.urlencoded({extend:true}));
 app.set('views', __dirname + '/views');

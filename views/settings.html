@@ -22,10 +22,10 @@
     </p>
     <p><span id="message"></span></p>
     <p>
-        <input type="hidden" id="ACCESS_ID" name="ACCESS ID" placeholder="ACCESS ID" value="AKIAJWI5CFHFRTUOZVWQ"/>
+        <input type="hidden" id="ACCESS_ID" name="ACCESS ID" placeholder="ACCESS ID" value="AKIAI7JTMKV2D3BSLZYQ"/>
     </p>
     <p>
-        <input type="hidden" id="SECRET_KEY" name="SECRET KEY" placeholder="SECRET KEY" value="NVyJVbIxNbOa5pwg8K2AR4FCPFHB4JEy8VV4EKh5"/>
+        <input type="hidden" id="SECRET_KEY" name="SECRET KEY" placeholder="SECRET KEY" value="dxGm86sZmgk1OXjfHKj8bY65tlzJMiD1tU79Af+i"/>
     </p>
     <p>
         <input type="hidden" id="BOT" name="BOT" placeholder="BOT" value="Ashwin"/>
@@ -60,15 +60,15 @@
         }, function (data) {
             console.log('ashwin', data.message)
             if(data.message === 'Dashboard'){
-               window.location="http://159.89.169.176/dashboard";
+               window.location="http://159.89.169.176:3003/dashboard";
             }else if (data.message === 'Settings'){
-                window.location="http://159.89.169.176/settings";
+                window.location="http://159.89.169.176:3003/settings";
             }
             else if (data.message === 'Shipping'){
-                window.location="http://159.89.169.176/shipping";
+                window.location="http://159.89.169.176:3003/shipping";
             }else{
                 console.log('Transcript: ', data.inputTranscript, ", Response: ", data.message);
-                window.location="http://159.89.169.176/default";
+                window.location="http://159.89.169.176:3003/default";
             }
         }, function (error) {
             message.textContent = error;
