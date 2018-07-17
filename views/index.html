@@ -61,17 +61,23 @@
         }, function (data) {
             console.log('ashwin', data.message)
             if(data.message === 'Dashboard'){
-              ashwin.textContent = "Dashboard1"
+              ashwin.textContent = "Redirected to Dashboard"
                // window.location="https://amazon-lex.herokuapp.com/dashboard";
                // alert('Dashboard')
             }else if (data.message === 'Settings'){
-                window.location="https://amazon-lex.herokuapp.com/settings";
+                // window.location="https://amazon-lex.herokuapp.com/settings";
+                ashwin.textContent = "Redirected to Settings"
+
             }
             else if (data.message === 'Shipping'){
-                window.location="https://amazon-lex.herokuapp.com/shipping";
+                // window.location="https://amazon-lex.herokuapp.com/shipping";
+                ashwin.textContent = "Redirected to Shipping"
+
             }else{
                 console.log('Transcript: ', data.inputTranscript, ", Response: ", data.message);
-                window.location="https://amazon-lex.herokuapp.com/default";
+                // window.location="https://amazon-lex.herokuapp.com/default";
+                ashwin.textContent = "Redirected to Default"
+
             }
         }, function (error) {
             message.textContent = error;
